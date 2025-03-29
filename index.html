@@ -101,13 +101,13 @@
             position: relative;
             overflow: hidden;
         }
-         .hero-bg {
+        .hero-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://imgur.com/WFtUN1A.png') no-repeat center center/cover;
+            background: url('https://imgur.com/a/8QoKQHk') no-repeat center center/cover;
             z-index: -1;
         }
         .hero-bg:after {
@@ -122,6 +122,18 @@
         .hero-content {
             color: var(--white);
             max-width: 800px;
+        }
+        .hero-title {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+        .hero-subtitle {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
         }
         .btn {
             display: inline-block;
@@ -191,49 +203,87 @@
             opacity: 0.8;
         }
 
-        #music {
-            background: var(--black);
+        /* NOVA SEÇÃO DA BANDA */
+        #banda {
+            background-color: var(--black);
             color: var(--white);
         }
-        #music .section-title {
+        #banda .section-title {
             color: var(--white);
         }
-        .music-grid {
+        .banda-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 30px;
         }
-        .music-item {
-            background: #1a1a1a;
+        .banda-member {
+            text-align: center;
+        }
+        .member-img {
+            width: 100%;
+            height: 250px;
             border-radius: 8px;
             overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
-        .music-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-        .music-cover {
+        .member-img img {
             width: 100%;
-            height: 300px;
+            height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
         }
-        .music-info {
-            padding: 25px;
+        .banda-member:hover .member-img img {
+            transform: scale(1.05);
         }
-        .music-info h3 {
+        .member-name {
             font-size: 18px;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
         }
-        .music-info p {
+        .member-role {
             font-size: 14px;
             opacity: 0.7;
-            margin-bottom: 20px;
+            color: var(--gold);
         }
-        .music-info .btn {
-            padding: 10px 25px;
-            font-size: 13px;
+
+        /* GALERIA DE FOTOS */
+        #galeria {
+            padding: 80px 0;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            aspect-ratio: 1/1;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
         }
 
         /* NOVO ESTILO PARA SHOWS */
@@ -250,6 +300,11 @@
             padding: 30px;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .show-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
         .show-date {
             font-size: 24px;
@@ -266,6 +321,11 @@
             font-size: 16px;
             color: var(--black);
             opacity: 0.8;
+        }
+        .show-btn {
+            margin-top: 20px;
+            padding: 10px 25px;
+            font-size: 14px;
         }
 
         #contact {
@@ -476,7 +536,10 @@
             .about-content {
                 flex-direction: column;
             }
-            .shows-grid {
+            .shows-grid, .banda-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
@@ -490,7 +553,10 @@
             .nav-links {
                 display: none;
             }
-            .shows-grid {
+            .shows-grid, .banda-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-grid {
                 grid-template-columns: 1fr;
             }
             .contact-form {
@@ -508,7 +574,9 @@
             <nav class="nav-links">
                 <a href="#hero">Início</a>
                 <a href="#about">Sobre</a>
+                <a href="#banda">Banda</a>
                 <a href="#discografia">Música</a>
+                <a href="#galeria">Galeria</a>
                 <a href="#shows">Shows</a>
                 <a href="#contact">Contato</a>
             </nav>
@@ -519,6 +587,8 @@
         <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-content">
+                <h1 class="hero-title">Barbara Kush</h1>
+                <p class="hero-subtitle">Música que transcende, performances que inspiram</p>
                 <a href="#discografia" class="btn">Explorar Música</a>
             </div>
         </div>
@@ -535,6 +605,43 @@
                     <h3>A Arte da Música</h3>
                     <p>Barbara Kush é uma cantora e compositora brasileira conhecida por sua voz poderosa e performances cativantes. Com influências que vão do MPB ao soul e jazz, Barbará cria uma sonoridade única que ressoa com públicos de todas as idades.</p>
                     <p>Seu álbum de estreia, "Sem Linhas", lançado em 2023, recebeu elogios da crítica e estabeleceu Barbará Kush como uma das vozes mais promissoras da nova geração da música brasileira.</p>
+                    <p>Além de sua carreira solo, Barbara também se apresenta regularmente com sua banda, criando experiências musicais memoráveis em palcos por todo o país.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="banda">
+        <div class="container">
+            <h2 class="section-title">A <span>Banda</span></h2>
+            <div class="banda-grid">
+                <div class="banda-member">
+                    <div class="member-img">
+                        <img src="https://imgur.com/ahMkrNp.jpg" alt="Barbara Kush">
+                    </div>
+                    <div class="member-name">Barbara Kush</div>
+                    <div class="member-role">Vocalista</div>
+                </div>
+                <div class="banda-member">
+                    <div class="member-img">
+                        <img src="https://imgur.com/a/8QoKQHk" alt="Guitarrista">
+                    </div>
+                    <div class="member-name">Rafael Costa</div>
+                    <div class="member-role">Guitarrista</div>
+                </div>
+                <div class="banda-member">
+                    <div class="member-img">
+                        <img src="https://imgur.com/a/8QoKQHk" alt="Baixista">
+                    </div>
+                    <div class="member-name">Marcos Silva</div>
+                    <div class="member-role">Baixista</div>
+                </div>
+                <div class="banda-member">
+                    <div class="member-img">
+                        <img src="https://imgur.com/a/8QoKQHk" alt="Baterista">
+                    </div>
+                    <div class="member-name">Carlos Drummond</div>
+                    <div class="member-role">Baterista</div>
                 </div>
             </div>
         </div>
@@ -610,6 +717,38 @@
         </div>
     </section>
 
+    <section id="galeria">
+        <div class="container">
+            <h2 class="section-title">Galeria de <span>Fotos</span></h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://imgur.com/ahMkrNp.jpg" alt="Barbara Kush no palco">
+                    <div class="gallery-caption">Show em São Paulo</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://imgur.com/a/8QoKQHk" alt="Barbara Kush ensaiando">
+                    <div class="gallery-caption">Ensaio com a banda</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://imgur.com/a/8QoKQHk" alt="Show ao vivo">
+                    <div class="gallery-caption">Festival de Música</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://imgur.com/a/8QoKQHk" alt="Barbara Kush em estúdio">
+                    <div class="gallery-caption">Gravação no estúdio</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://imgur.com/a/8QoKQHk" alt="Banda completa">
+                    <div class="gallery-caption">Banda completa</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://imgur.com/a/8QoKQHk" alt="Show acústico">
+                    <div class="gallery-caption">Show acústico</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="shows">
         <div class="container">
             <h2 class="section-title">Próximos <span>Shows</span></h2>
@@ -618,16 +757,19 @@
                     <div class="show-date">02 MAR</div>
                     <div class="show-city">Umuarama, PR</div>
                     <div class="show-venue">Bar do Luisão</div>
+                    <a href="#" class="btn show-btn">Ingressos</a>
                 </div>
                 <div class="show-card">
                     <div class="show-date">12 MAR</div>
                     <div class="show-city">Umuarama, PR</div>
                     <div class="show-venue">Bar da Paula</div>
+                    <a href="#" class="btn show-btn">Ingressos</a>
                 </div>
                 <div class="show-card">
                     <div class="show-date">28 MAR</div>
                     <div class="show-city">Ponta Grossa, PR</div>
                     <div class="show-venue">capivarasrockbar</div>
+                    <a href="#" class="btn show-btn">Ingressos</a>
                 </div>
             </div>
         </div>
@@ -670,6 +812,7 @@
                 <a href="https://www.instagram.com/barbarakush?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://open.spotify.com/intl-pt/artist/1kQD9oZLa7bjPRoSh9aisD?si=vEC9n1sYRa-t1dZiMPIxDw" target="_blank"><i class="fab fa-spotify"></i></a>
                 <a href="https://www.youtube.com/@barbarakush2481" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@barbarakush" target="_blank"><i class="fab fa-tiktok"></i></a>
             </div>            
             <p class="copyright">© 2023 Barbara Kush. Todos os direitos reservados.</p>
         </div>
@@ -699,6 +842,17 @@
                 }, 1500);
             });
         }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 </body>
 </html>
