@@ -269,7 +269,7 @@
         }
 
         #contact {
-            background: var(--black);
+            background: #000000;
             color: var(--white);
         }
         #contact .section-title {
@@ -278,6 +278,10 @@
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         .form-group {
             margin-bottom: 25px;
@@ -288,6 +292,7 @@
             font-weight: 500;
             margin-bottom: 10px;
             letter-spacing: 1px;
+            color: var(--white);
         }
         .form-group input,
         .form-group textarea {
@@ -304,6 +309,7 @@
         .form-group textarea:focus {
             outline: none;
             background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 0 2px var(--gold);
         }
         .form-group textarea {
             height: 150px;
@@ -313,6 +319,16 @@
             width: 100%;
             padding: 18px;
             font-size: 15px;
+            background: var(--gold);
+            color: var(--black);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .submit-btn:hover {
+            background: var(--dark-gold);
+            transform: translateY(-2px);
         }
 
         footer {
@@ -359,6 +375,100 @@
             text-decoration: underline;
         }
 
+        /* Estilo da seção Spotify */
+        #discografia {
+            background: #000;
+            padding: 80px 0;
+        }
+        
+        #discografia .section-title {
+            color: #fff;
+        }
+        
+        .spotify-player {
+            background: #181818;
+            border-radius: 8px;
+            overflow: hidden;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .spotify-header {
+            background: #1DB954;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .spotify-header h3 {
+            color: #fff;
+            margin: 0;
+            font-size: 18px;
+        }
+        
+        .spotify-btn {
+            background: #000;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .spotify-tracks {
+            padding: 15px;
+        }
+        
+        .track {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            border-bottom: 1px solid #282828;
+            transition: background 0.3s;
+        }
+        
+        .track:last-child {
+            border-bottom: none;
+        }
+        
+        .track:hover {
+            background: #282828;
+        }
+        
+        .track-info h4 {
+            color: #fff;
+            margin: 0 0 5px 0;
+            font-size: 16px;
+        }
+        
+        .track-info p {
+            color: #b3b3b3;
+            margin: 0;
+            font-size: 13px;
+        }
+        
+        .play-btn {
+            color: #fff;
+            background: transparent;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .play-btn:hover {
+            color: #1DB954;
+            transform: scale(1.1);
+        }
+
         @media (max-width: 992px) {
             .hero-title {
                 font-size: 56px;
@@ -382,6 +492,9 @@
             }
             .shows-grid {
                 grid-template-columns: 1fr;
+            }
+            .contact-form {
+                padding: 25px;
             }
         }
     </style>
@@ -427,181 +540,76 @@
         </div>
     </section>
 
-    <!-- Adicionar músicas - seguir padrão -->
-<section id="discografia">
-    <div class="container">
-        <h2 class="section-title">Discografia <span>Spotify</span></h2>
-        
-        <div class="spotify-player">
-            <div class="spotify-header">
-                <h3>Barbara Kush</h3>
-                <a href="https://open.spotify.com/intl-pt/artist/1kQD9oZLa7bjPRoSh9aisD" 
-                   class="spotify-btn" target="_blank">
-                   <i class="fab fa-spotify"></i> Seguir no Spotify
-                </a>
-            </div>
+    <section id="discografia">
+        <div class="container">
+            <h2 class="section-title">Discografia <span>Spotify</span></h2>
             
-            <div class="spotify-tracks">
-                <!-- Música 1 -->
-                <div class="track">
-                    <div class="track-info">
-                        <h4>Good Feeling (Remix)</h4>
-                        <p>Barbara Kush • 3:45</p>
-                    </div>
-                    <a href="https://open.spotify.com/intl-pt/track/2WvyJiXgINbYBKeYab5o77?si=0000149197cc424c" 
-                       class="play-btn" target="_blank">
-                       <i class="fas fa-play"></i>
+            <div class="spotify-player">
+                <div class="spotify-header">
+                    <h3>Barbara Kush</h3>
+                    <a href="https://open.spotify.com/intl-pt/artist/1kQD9oZLa7bjPRoSh9aisD" 
+                       class="spotify-btn" target="_blank">
+                       <i class="fab fa-spotify"></i> Seguir no Spotify
                     </a>
                 </div>
                 
-                <!-- Música 2 -->
-                <div class="track">
-                    <div class="track-info">
-                        <h4>Beggin</h4>
-                        <p>Barbara Kush • 4:12</p>
+                <div class="spotify-tracks">
+                    <div class="track">
+                        <div class="track-info">
+                            <h4>Good Feeling (Remix)</h4>
+                            <p>Barbara Kush • 3:45</p>
+                        </div>
+                        <a href="https://open.spotify.com/intl-pt/track/2WvyJiXgINbYBKeYab5o77?si=0000149197cc424c" 
+                           class="play-btn" target="_blank">
+                           <i class="fas fa-play"></i>
+                        </a>
                     </div>
-                    <a href="https://open.spotify.com/intl-pt/track/5NGGNEGLZ3T5JCLN5UPw2F?si=607fd31883d84e92" 
-                       class="play-btn" target="_blank">
-                       <i class="fas fa-play"></i>
-                    </a>
-                </div>
-                <!-- Música 3 -->
-                <div class="track">
-                    <div class="track-info">
-                        <h4>Good Feeling (Extended Mix)</h4>
-                        <p>Barbara Kush • 4:12</p>
+                    
+                    <div class="track">
+                        <div class="track-info">
+                            <h4>Beggin</h4>
+                            <p>Barbara Kush • 4:12</p>
+                        </div>
+                        <a href="https://open.spotify.com/intl-pt/track/5NGGNEGLZ3T5JCLN5UPw2F?si=607fd31883d84e92" 
+                           class="play-btn" target="_blank">
+                           <i class="fas fa-play"></i>
+                        </a>
                     </div>
-                    <a href="https://open.spotify.com/intl-pt/track/1xjPnnm6M15PoWn53GOaYO?si=4ccf9544561a49f5" 
-                       class="play-btn" target="_blank">
-                       <i class="fas fa-play"></i>
-                    </a>
-                </div>
-                <!-- Música 4 -->
-                <div class="track">
-                    <div class="track-info">
-                        <h4>Me Leva</h4>
-                        <p>Barbara Kush • 4:12</p>
+                    <div class="track">
+                        <div class="track-info">
+                            <h4>Good Feeling (Extended Mix)</h4>
+                            <p>Barbara Kush • 4:12</p>
+                        </div>
+                        <a href="https://open.spotify.com/intl-pt/track/1xjPnnm6M15PoWn53GOaYO?si=4ccf9544561a49f5" 
+                           class="play-btn" target="_blank">
+                           <i class="fas fa-play"></i>
+                        </a>
                     </div>
-                    <a href="https://open.spotify.com/intl-pt/track/6LDQe2VSvrFpIdTEg8HT1Q?si=c7632bd0b7144a0a" 
-                       class="play-btn" target="_blank">
-                       <i class="fas fa-play"></i>
-                    </a>
-                </div>
-              <!-- Música 4 -->
-                <div class="track">
-                    <div class="track-info">
-                        <h4>Sem Linhas</h4>
-                        <p>Barbara Kush • 4:12</p>
+                    <div class="track">
+                        <div class="track-info">
+                            <h4>Me Leva</h4>
+                            <p>Barbara Kush • 4:12</p>
+                        </div>
+                        <a href="https://open.spotify.com/intl-pt/track/6LDQe2VSvrFpIdTEg8HT1Q?si=c7632bd0b7144a0a" 
+                           class="play-btn" target="_blank">
+                           <i class="fas fa-play"></i>
+                        </a>
                     </div>
-                    <a href="https://open.spotify.com/intl-pt/track/5yQiWgEC1VXShTcCJ5K8sV?si=3300765e8c4d4fd5" 
-                       class="play-btn" target="_blank">
-                       <i class="fas fa-play"></i>
-                    </a>
+                    <div class="track">
+                        <div class="track-info">
+                            <h4>Sem Linhas</h4>
+                            <p>Barbara Kush • 4:12</p>
+                        </div>
+                        <a href="https://open.spotify.com/intl-pt/track/5yQiWgEC1VXShTcCJ5K8sV?si=3300765e8c4d4fd5" 
+                           class="play-btn" target="_blank">
+                           <i class="fas fa-play"></i>
+                        </a>
+                    </div>
                 </div>
-                <!-- Adicione mais músicas seguindo o mesmo padrão -->
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Adicione este CSS no <style> existente -->
-<style>
-    /* Estilo da seção Spotify */
-    #discografia {
-        background: #000;
-        padding: 80px 0;
-    }
-    
-    #discografia .section-title {
-        color: #fff;
-    }
-    
-    .spotify-player {
-        background: #181818;
-        border-radius: 8px;
-        overflow: hidden;
-        max-width: 600px;
-        margin: 0 auto;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    }
-    
-    .spotify-header {
-        background: #1DB954;
-        padding: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .spotify-header h3 {
-        color: #fff;
-        margin: 0;
-        font-size: 18px;
-    }
-    
-    .spotify-btn {
-        background: #000;
-        color: #fff;
-        padding: 8px 15px;
-        border-radius: 20px;
-        font-size: 12px;
-        text-decoration: none;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-    }
-    
-    .spotify-tracks {
-        padding: 15px;
-    }
-    
-    .track {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 12px;
-        border-bottom: 1px solid #282828;
-        transition: background 0.3s;
-    }
-    
-    .track:last-child {
-        border-bottom: none;
-    }
-    
-    .track:hover {
-        background: #282828;
-    }
-    
-    .track-info h4 {
-        color: #fff;
-        margin: 0 0 5px 0;
-        font-size: 16px;
-    }
-    
-    .track-info p {
-        color: #b3b3b3;
-        margin: 0;
-        font-size: 13px;
-    }
-    
-    .play-btn {
-        color: #fff;
-        background: transparent;
-        border: none;
-        font-size: 18px;
-        cursor: pointer;
-        padding: 8px;
-        transition: transform 0.3s;
-    }
-    
-    .play-btn:hover {
-        color: #1DB954;
-        transform: scale(1.1);
-    }
-</style>
-
-    <!-- NOVA SEÇÃO DE SHOWS -->
     <section id="shows">
         <div class="container">
             <h2 class="section-title">Próximos <span>Shows</span></h2>
@@ -622,49 +630,39 @@
                     <div class="show-venue">capivarasrockbar</div>
                 </div>
             </div>
-            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em <span>Contato</span></h2>
             <div class="contact-form">
-                <form action="https://formsubmit.co/luci-lemes@hotmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="Novo contato do site">
-                    <input type="hidden" name="_next" value="https://lucilemes.com/obrigado.html">
+                <form action="https://formsubmit.co/kauannikolaslemes@gmail.com" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+                    <input type="hidden" name="_subject" value="Novo contato do site Barbara Kush">
+                    
                     <div class="form-group">
-                        <label for="name">Nome</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
+                        <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Telefone</label>
-                        <input type="tel" id="phone" name="phone" class="form-control">
+                        <label for="phone">Telefone (Opcional)</label>
+                        <input type="tel" id="phone" name="phone">
                     </div>
                     <div class="form-group">
                         <label for="message">Mensagem</label>
-                        <textarea id="message" name="message" class="form-control" required></textarea>
+                        <textarea id="message" name="message" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-dark">ENVIAR MENSAGEM</button>
+                    <button type="submit" class="submit-btn">ENVIAR MENSAGEM</button>
                 </form>
             </div>
         </div>
     </section>
-
-
-<script>
-    const form = document.querySelector('.contact-form');
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            const submitBtn = form.querySelector('button[type="submit"]');
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = 'Enviando...';
-            
-            // Você pode adicionar aqui uma lógica para mostrar mensagem de sucesso
-            setTimeout(() => {
-                submitBtn.innerHTML = 'Mensagem Enviada!';
-            }, 1500);
-        });
-    }
-</script>
 
     <footer>
         <div class="container">
@@ -678,6 +676,7 @@
     </footer>
 
     <script>
+        // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
             if (window.scrollY > 50) {
@@ -686,6 +685,20 @@
                 header.classList.remove('scrolled');
             }
         });
+        
+        // Form submission feedback
+        const form = document.querySelector('#contact form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                const submitBtn = form.querySelector('button[type="submit"]');
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Enviando...';
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = 'Mensagem Enviada!';
+                }, 1500);
+            });
+        }
     </script>
 </body>
 </html>
