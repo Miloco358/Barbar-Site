@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barbará Kush | Música e Arte</title>
     <style>
-        /* RESET IDÊNTICO AO SOLA */
         :root {
             --black: #0a0a0a;
             --white: #ffffff;
@@ -36,7 +35,6 @@
             margin: 0 auto;
         }
 
-        /* HEADER IDÊNTICO */
         header {
             position: fixed;
             top: 0;
@@ -96,7 +94,6 @@
             width: 100%;
         }
 
-        /* HERO SECTION IDÊNTICA */
         #hero {
             height: 100vh;
             display: flex;
@@ -158,7 +155,6 @@
             box-shadow: 0 10px 30px rgba(198, 159, 117, 0.3);
         }
 
-        /* ABOUT SECTION IDÊNTICA */
         .section-title {
             font-size: 42px;
             font-weight: 700;
@@ -209,7 +205,6 @@
             opacity: 0.8;
         }
 
-        /* MUSIC SECTION IDÊNTICA */
         #music {
             background: var(--black);
             color: var(--white);
@@ -255,7 +250,6 @@
             font-size: 13px;
         }
 
-        /* SHOWS SECTION IDÊNTICA */
         .shows-list {
             max-width: 800px;
             margin: 0 auto;
@@ -291,7 +285,6 @@
             color: var(--white);
         }
 
-        /* CONTACT SECTION IDÊNTICA */
         #contact {
             background: var(--black);
             color: var(--white);
@@ -339,7 +332,6 @@
             font-size: 15px;
         }
 
-        /* FOOTER IDÊNTICO */
         footer {
             background: #050505;
             padding: 80px 0 30px;
@@ -364,6 +356,25 @@
             font-size: 13px;
             opacity: 0.6;
             letter-spacing: 1px;
+        }
+        
+        /* NOVOS LINKS ADICIONADOS */
+        .external-links {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .external-links a {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        .external-links a:hover {
+            color: var(--white);
+            text-decoration: underline;
         }
 
         /* RESPONSIVO IDÊNTICO */
@@ -403,7 +414,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- HEADER IDÊNTICO -->
     <header id="header">
         <div class="container header-container">
             <a href="#" class="logo">Barbará <span>Kush</span></a>
@@ -417,7 +427,6 @@
         </div>
     </header>
 
-    <!-- HERO SECTION IDÊNTICA -->
     <section id="hero">
         <div class="hero-bg"></div>
         <div class="container">
@@ -428,8 +437,7 @@
             </div>
         </div>
     </section>
-
-    <!-- ABOUT SECTION IDÊNTICA -->
+    
     <section id="about">
         <div class="container">
             <h2 class="section-title">Sobre <span>Mim</span></h2>
@@ -446,7 +454,7 @@
         </div>
     </section>
 
-    <!-- MUSIC SECTION ATUALIZADA COM OS NOVOS ÁLBUNS -->
+    <!-- MUSICAS -->
     <section id="music">
         <div class="container">
             <h2 class="section-title">Minha <span>Música</span></h2>
@@ -519,7 +527,6 @@
         </div>
     </section>
 
-    <!-- SHOWS SECTION IDÊNTICA -->
     <section id="shows">
         <div class="container">
             <h2 class="section-title">Próximos <span>Shows</span></h2>
@@ -552,7 +559,6 @@
         </div>
     </section>
 
-    <!-- CONTACT SECTION IDÊNTICA -->
     <section id="contact">
         <div class="container">
             <h2 class="section-title">Entre em <span>Contato</span></h2>
@@ -574,15 +580,21 @@
         </div>
     </section>
 
-    <!-- FOOTER IDÊNTICO -->
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-spotify"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/barbarakush?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://open.spotify.com/intl-pt/artist/1kQD9oZLa7bjPRoSh9aisD?si=vEC9n1sYRa-t1dZiMPIxDw" target="_blank"><i class="fab fa-spotify"></i></a>
+                <a href="https://www.youtube.com/@barbarakush2481" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
+            
+            <!-- LINKS ADICIONADOS -->
+            <div class="external-links">
+                <a href="https://www.instagram.com/barbarakush?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a>
+                <a href="https://open.spotify.com/intl-pt/artist/1kQD9oZLa7bjPRoSh9aisD?si=vEC9n1sYRa-t1dZiMPIxDw" target="_blank">Spotify</a>
+                <a href="https://www.youtube.com/@barbarakush2481" target="_blank">YouTube</a>
+            </div>
+            
             <p class="copyright">© 2023 Barbará Kush. Todos os direitos reservados.</p>
         </div>
     </footer>
