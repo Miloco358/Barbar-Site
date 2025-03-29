@@ -3,129 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbará Kush | Cantora</title>
+    <title>Barbará Kush | Música e Arte</title>
     <style>
-        /* RESET & FONTS */
+        /* RESET IDÊNTICO AO SOLA */
         :root {
             --black: #0a0a0a;
-            --white: #f5f5f5;
+            --white: #ffffff;
+            --beige: #f5f5f5;
             --gold: #c69f75;
-            --gray: #3a3a3a;
+            --dark-gold: #a8865c;
         }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         html {
             scroll-behavior: smooth;
         }
-        
-        /* ESTRUTURA GERAL */
         body {
-            background: var(--black);
-            color: var(--white);
+            background-color: var(--beige);
+            color: var(--black);
             overflow-x: hidden;
         }
         section {
-            min-height: 100vh;
-            padding: 80px 5%;
-            position: relative;
+            padding: 100px 0;
         }
         .container {
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
         }
-        
-        /* HEADER */
+
+        /* HEADER IDÊNTICO */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 25px 5%;
+            padding: 30px 0;
+            z-index: 1000;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        header.scrolled {
+            background-color: var(--white);
+            padding: 15px 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        header.scrolled {
-            background: rgba(10, 10, 10, 0.9);
-            padding: 15px 5%;
-            border-bottom: 1px solid rgba(198, 159, 117, 0.2);
         }
         .logo {
-            font-size: 1.8rem;
+            font-size: 24px;
             font-weight: 700;
-            color: var(--white);
+            color: var(--black);
             text-decoration: none;
+            letter-spacing: 1px;
         }
         .logo span {
             color: var(--gold);
         }
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 40px;
         }
         .nav-links a {
-            color: var(--white);
+            color: var(--black);
             text-decoration: none;
             font-weight: 500;
+            font-size: 15px;
             letter-spacing: 1px;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
+            position: relative;
         }
         .nav-links a:hover {
             color: var(--gold);
         }
-        
-        /* HERO SECTION */
-        #home {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
-            display: flex;
-            align-items: center;
-            text-align: center;
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
         }
-        .hero-content {
+        .nav-links a:hover:after {
             width: 100%;
         }
-        .hero-content h1 {
-            font-size: 4.5rem;
-            margin-bottom: 20px;
-            letter-spacing: 3px;
+
+        /* HERO SECTION IDÊNTICA */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
         }
-        .hero-content p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 40px;
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            z-index: -1;
+        }
+        .hero-bg:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .hero-content {
+            color: var(--white);
+            max-width: 800px;
+        }
+        .hero-title {
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+        .hero-subtitle {
+            font-size: 18px;
             line-height: 1.6;
+            margin-bottom: 40px;
+            font-weight: 400;
+            opacity: 0.9;
         }
         .btn {
             display: inline-block;
-            padding: 12px 35px;
+            padding: 16px 40px;
             background: var(--gold);
             color: var(--black);
             text-decoration: none;
             font-weight: 600;
+            font-size: 14px;
             letter-spacing: 1px;
             border-radius: 50px;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
         .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(198, 159, 117, 0.3);
+            background: var(--dark-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(198, 159, 117, 0.3);
         }
-        
-        /* ABOUT SECTION */
-        #about {
-            background: var(--white);
-            color: var(--black);
-        }
+
+        /* ABOUT SECTION IDÊNTICA */
         .section-title {
+            font-size: 42px;
+            font-weight: 700;
             text-align: center;
-            font-size: 2.8rem;
             margin-bottom: 80px;
             position: relative;
         }
@@ -136,19 +173,19 @@
             left: 50%;
             transform: translateX(-50%);
             width: 80px;
-            height: 3px;
+            height: 2px;
             background: var(--gold);
         }
         .about-content {
             display: flex;
             align-items: center;
-            gap: 50px;
+            gap: 60px;
         }
         .about-img {
             flex: 1;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
         .about-img img {
             width: 100%;
@@ -159,18 +196,26 @@
             flex: 1;
         }
         .about-text h3 {
-            font-size: 1.8rem;
+            font-size: 24px;
+            font-weight: 600;
             margin-bottom: 20px;
             color: var(--gold);
         }
         .about-text p {
-            margin-bottom: 20px;
+            font-size: 16px;
             line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--black);
+            opacity: 0.8;
         }
-        
-        /* MUSIC SECTION */
+
+        /* MUSIC SECTION IDÊNTICA */
         #music {
             background: var(--black);
+            color: var(--white);
+        }
+        #music .section-title {
+            color: var(--white);
         }
         .music-grid {
             display: grid;
@@ -178,14 +223,14 @@
             gap: 30px;
         }
         .music-item {
-            background: var(--gray);
-            border-radius: 10px;
+            background: #1a1a1a;
+            border-radius: 8px;
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
         .music-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
         .music-cover {
             width: 100%;
@@ -193,23 +238,24 @@
             object-fit: cover;
         }
         .music-info {
-            padding: 20px;
+            padding: 25px;
         }
         .music-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
         }
         .music-info p {
-            opacity: 0.8;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
+            font-size: 14px;
+            opacity: 0.7;
+            margin-bottom: 20px;
         }
-        
-        /* SHOWS SECTION */
-        #shows {
-            background: var(--white);
-            color: var(--black);
+        .music-info .btn {
+            padding: 10px 25px;
+            font-size: 13px;
         }
+
+        /* SHOWS SECTION IDÊNTICA */
         .shows-list {
             max-width: 800px;
             margin: 0 auto;
@@ -218,30 +264,40 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 25px 0;
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
         .show-date {
+            font-size: 16px;
             font-weight: 700;
             color: var(--gold);
             min-width: 100px;
         }
         .show-location {
             flex: 1;
-            padding: 0 20px;
+            padding: 0 30px;
         }
         .show-location h3 {
-            font-size: 1.1rem;
+            font-size: 18px;
+            font-weight: 600;
             margin-bottom: 5px;
+        }
+        .show-location p {
+            font-size: 14px;
+            opacity: 0.7;
         }
         .show-btn {
             background: var(--black);
             color: var(--white);
         }
-        
-        /* CONTACT SECTION */
+
+        /* CONTACT SECTION IDÊNTICA */
         #contact {
             background: var(--black);
+            color: var(--white);
+        }
+        #contact .section-title {
+            color: var(--white);
         }
         .contact-form {
             max-width: 600px;
@@ -252,17 +308,26 @@
         }
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            font-size: 14px;
             font-weight: 500;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
         }
         .form-group input,
         .form-group textarea {
             width: 100%;
             padding: 15px;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
             background: rgba(255, 255, 255, 0.1);
             color: var(--white);
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
         }
         .form-group textarea {
             height: 150px;
@@ -270,43 +335,52 @@
         }
         .submit-btn {
             width: 100%;
-            cursor: pointer;
-            font-size: 1rem;
+            padding: 18px;
+            font-size: 15px;
         }
-        
-        /* FOOTER */
+
+        /* FOOTER IDÊNTICO */
         footer {
             background: #050505;
-            padding: 50px 5% 20px;
+            padding: 80px 0 30px;
             text-align: center;
         }
         .social-links {
             display: flex;
             justify-content: center;
             gap: 25px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         .social-links a {
             color: var(--white);
-            font-size: 1.5rem;
+            font-size: 18px;
             transition: all 0.3s ease;
         }
         .social-links a:hover {
             color: var(--gold);
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
         .copyright {
-            opacity: 0.7;
-            font-size: 0.9rem;
+            font-size: 13px;
+            opacity: 0.6;
+            letter-spacing: 1px;
         }
-        
-        /* RESPONSIVO */
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 3rem;
+
+        /* RESPONSIVO IDÊNTICO */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 56px;
             }
             .about-content {
                 flex-direction: column;
+            }
+        }
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 42px;
+            }
+            .section-title {
+                font-size: 36px;
             }
             .nav-links {
                 display: none;
@@ -319,36 +393,43 @@
             .show-date {
                 margin-bottom: 10px;
             }
+            .show-location {
+                padding: 0;
+                margin-bottom: 15px;
+            }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- HEADER -->
+    <!-- HEADER IDÊNTICO -->
     <header id="header">
-        <a href="#" class="logo">Barbará <span>Kush</span></a>
-        <nav class="nav-links">
-            <a href="#home">Início</a>
-            <a href="#about">Sobre</a>
-            <a href="#music">Música</a>
-            <a href="#shows">Shows</a>
-            <a href="#contact">Contato</a>
-        </nav>
+        <div class="container header-container">
+            <a href="#" class="logo">Barbará <span>Kush</span></a>
+            <nav class="nav-links">
+                <a href="#hero">Início</a>
+                <a href="#about">Sobre</a>
+                <a href="#music">Música</a>
+                <a href="#shows">Shows</a>
+                <a href="#contact">Contato</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section id="home">
+    <!-- HERO SECTION IDÊNTICA -->
+    <section id="hero">
+        <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-content">
-                <h1>Barbará Kush</h1>
-                <p>Uma voz que transcende, emoções que permanecem. Descubra a música que vai tocar sua alma.</p>
-                <a href="#music" class="btn">Ouvir Agora</a>
+                <h1 class="hero-title">Barbará Kush</h1>
+                <p class="hero-subtitle">Uma voz que transcende, emoções que permanecem. Descubra a música que vai tocar sua alma.</p>
+                <a href="#music" class="btn">Explorar Música</a>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
+    <!-- ABOUT SECTION IDÊNTICA -->
     <section id="about">
         <div class="container">
             <h2 class="section-title">Sobre <span>Mim</span></h2>
@@ -357,16 +438,16 @@
                     <img src="https://images.unsplash.com/photo-1517230878791-4d28214057c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Barbará Kush">
                 </div>
                 <div class="about-text">
-                    <h3>A voz que você vai lembrar</h3>
+                    <h3>A Arte da Música</h3>
                     <p>Barbará Kush é uma cantora e compositora brasileira conhecida por sua voz poderosa e performances cativantes. Com influências que vão do MPB ao soul e jazz, Barbará cria uma sonoridade única que ressoa com públicos de todas as idades.</p>
                     <p>Nascida em Salvador, Bahia, ela começou sua jornada musical na igreja local, onde desenvolveu sua técnica vocal. Após se formar em música, Barbará se mudou para São Paulo para perseguir seu sonho de carreira musical profissional.</p>
-                    <a href="#music" class="btn">Conheça Minha Música</a>
+                    <p>Seu álbum de estreia, "Alma Livre", lançado em 2018, recebeu elogios da crítica e estabeleceu Barbará como uma das vozes mais promissoras da nova geração da música brasileira.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MUSIC SECTION -->
+    <!-- MUSIC SECTION IDÊNTICA -->
     <section id="music">
         <div class="container">
             <h2 class="section-title">Minha <span>Música</span></h2>
@@ -399,7 +480,7 @@
         </div>
     </section>
 
-    <!-- SHOWS SECTION -->
+    <!-- SHOWS SECTION IDÊNTICA -->
     <section id="shows">
         <div class="container">
             <h2 class="section-title">Próximos <span>Shows</span></h2>
@@ -432,13 +513,13 @@
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
+    <!-- CONTACT SECTION IDÊNTICA -->
     <section id="contact">
         <div class="container">
             <h2 class="section-title">Entre em <span>Contato</span></h2>
             <form class="contact-form">
                 <div class="form-group">
-                    <label for="name">Nome</label>
+                    <label for="name">Nome Completo</label>
                     <input type="text" id="name" required>
                 </div>
                 <div class="form-group">
@@ -454,22 +535,24 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER IDÊNTICO -->
     <footer>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-spotify"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-spotify"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <p class="copyright">© 2023 Barbará Kush. Todos os direitos reservados.</p>
         </div>
-        <p class="copyright">© 2023 Barbará Kush. Todos os direitos reservados.</p>
     </footer>
 
     <script>
-        // Header scroll effect
+        // Efeito de scroll no header IDÊNTICO
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
-            if (window.scrollY > 100) {
+            if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
