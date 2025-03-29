@@ -624,14 +624,12 @@
             </div>
         </div>
     </section>
-    <!-- Substitua a seção de contato por este código -->
 <section id="contact">
     <div class="container">
         <h2 class="section-title">Entre em <span>Contato</span></h2>
         <form class="contact-form" action="https://formsubmit.co/kauannikolaslemes@gmail.com" method="POST">
             <!-- Campos ocultos para configurar o FormSubmit -->
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://seusite.com/obrigado.html"> <!-- Substitua pela sua URL de sucesso -->
             <input type="hidden" name="_subject" value="Novo contato do site Barbara Kush">
             
             <div class="form-group">
@@ -651,9 +649,8 @@
     </div>
 </section>
 
-<!-- Adicione este script no final do body, antes do </body> -->
+
 <script>
-    // Configuração adicional do formulário
     const form = document.querySelector('.contact-form');
     if (form) {
         form.addEventListener('submit', function(e) {
