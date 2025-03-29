@@ -123,20 +123,6 @@
             color: var(--white);
             max-width: 800px;
         }
-        .hero-title {
-            font-size: 72px;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-        }
-        .hero-subtitle {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 40px;
-            font-weight: 400;
-            opacity: 0.9;
-        }
         .btn {
             display: inline-block;
             padding: 16px 40px;
@@ -250,64 +236,36 @@
             font-size: 13px;
         }
 
-        /* NOVA SEÇÃO DE SHOWS */
+        /* NOVO ESTILO PARA SHOWS */
         .shows-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
-        
         .show-card {
-            background: white;
-            border-radius: 10px;
-            padding: 25px;
+            background: var(--white);
+            border-radius: 8px;
+            padding: 30px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
-        .show-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-        
         .show-date {
             font-size: 24px;
             font-weight: 700;
             color: var(--gold);
             margin-bottom: 10px;
         }
-        
         .show-city {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 600;
-            color: var(--black);
             margin-bottom: 5px;
         }
-        
         .show-venue {
             font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-        
-        .show-btn {
-            display: inline-block;
-            padding: 10px 25px;
-            background: var(--gold);
             color: var(--black);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-        }
-        
-        .show-btn:hover {
-            background: var(--dark-gold);
-            transform: translateY(-2px);
+            opacity: 0.8;
         }
 
         #contact {
@@ -408,6 +366,9 @@
             .about-content {
                 flex-direction: column;
             }
+            .shows-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         @media (max-width: 768px) {
             .hero-title {
@@ -421,7 +382,6 @@
             }
             .shows-grid {
                 grid-template-columns: 1fr;
-                max-width: 400px;
             }
         }
     </style>
@@ -446,8 +406,6 @@
         <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Barbara Kush</h1>
-                <p class="hero-subtitle">Uma voz que transcende, emoções que permanecem. Descubra a música que vai tocar sua alma.</p>
                 <a href="#music" class="btn">Explorar Música</a>
             </div>
         </div>
@@ -542,32 +500,25 @@
         </div>
     </section>
 
+    <!-- NOVA SEÇÃO DE SHOWS -->
     <section id="shows">
         <div class="container">
             <h2 class="section-title">Próximos <span>Shows</span></h2>
             <div class="shows-grid">
-                <!-- Show 1 -->
                 <div class="show-card">
                     <div class="show-date">02 MAR</div>
-                    <div class="show-city">Umuarama - PR</div>
+                    <div class="show-city">Umuarama, PR</div>
                     <div class="show-venue">Bar do Luisão</div>
-                    <a href="#" class="show-btn">Ingressos</a>
                 </div>
-                
-                <!-- Show 2 -->
                 <div class="show-card">
                     <div class="show-date">12 MAR</div>
-                    <div class="show-city">Umuarama - PR</div>
+                    <div class="show-city">Umuarama, PR</div>
                     <div class="show-venue">Bar da Paula</div>
-                    <a href="#" class="show-btn">Ingressos</a>
                 </div>
-                
-                <!-- Show 3 -->
                 <div class="show-card">
                     <div class="show-date">28 MAR</div>
-                    <div class="show-city">Ponta Grossa - PR</div>
-                    <div class="show-venue">Capivaras Rock Bar</div>
-                    <a href="#" class="show-btn">Ingressos</a>
+                    <div class="show-city">Ponta Grossa, PR</div>
+                    <div class="show-venue">capivarasrockbar</div>
                 </div>
             </div>
         </div>
