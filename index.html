@@ -3,346 +3,333 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbará Kush - Cantora</title>
+    <title>Barbará Kush | Cantora</title>
     <style>
+        /* RESET & FONTS */
         :root {
-            --primary-color: #1a1a1a;
-            --secondary-color: #f5f5f5;
-            --accent-color: #c69f75;
-            --text-color: #333;
-            --light-text: #fff;
+            --black: #0a0a0a;
+            --white: #f5f5f5;
+            --gold: #c69f75;
+            --gray: #3a3a3a;
         }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Montserrat', sans-serif;
         }
-        
-        body {
-            background-color: var(--secondary-color);
-            color: var(--text-color);
-            overflow-x: hidden;
+        html {
+            scroll-behavior: smooth;
         }
         
-        /* Header */
+        /* ESTRUTURA GERAL */
+        body {
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+        section {
+            min-height: 100vh;
+            padding: 80px 5%;
+            position: relative;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* HEADER */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 20px 40px;
+            padding: 25px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            background-color: transparent;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
         }
-        
         header.scrolled {
-            background-color: var(--primary-color);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: rgba(10, 10, 10, 0.9);
+            padding: 15px 5%;
+            border-bottom: 1px solid rgba(198, 159, 117, 0.2);
         }
-        
         .logo {
-            font-size: 24px;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: var(--light-text);
+            color: var(--white);
             text-decoration: none;
         }
-        
         .logo span {
-            color: var(--accent-color);
+            color: var(--gold);
         }
-        
         .nav-links {
             display: flex;
             gap: 30px;
         }
-        
         .nav-links a {
-            color: var(--light-text);
+            color: var(--white);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--light-text);
-            padding: 0 20px;
-        }
-        
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin-bottom: 40px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--accent-color);
-            color: var(--light-text);
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
+            letter-spacing: 1px;
             transition: all 0.3s ease;
         }
+        .nav-links a:hover {
+            color: var(--gold);
+        }
         
+        /* HERO SECTION */
+        #home {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        .hero-content {
+            width: 100%;
+        }
+        .hero-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 35px;
+            background: var(--gold);
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
         .btn:hover {
-            background-color: #b58e64;
-            transform: translateY(-3px);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(198, 159, 117, 0.3);
         }
         
-        /* About Section */
-        .section {
-            padding: 100px 40px;
+        /* ABOUT SECTION */
+        #about {
+            background: var(--white);
+            color: var(--black);
         }
-        
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            color: var(--primary-color);
+            font-size: 2.8rem;
+            margin-bottom: 80px;
+            position: relative;
         }
-        
-        .section-title span {
-            color: var(--accent-color);
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
         }
-        
         .about-content {
             display: flex;
             align-items: center;
-            gap: 60px;
-            max-width: 1200px;
-            margin: 0 auto;
+            gap: 50px;
         }
-        
         .about-img {
             flex: 1;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
-        
         .about-img img {
             width: 100%;
             height: auto;
             display: block;
         }
-        
         .about-text {
             flex: 1;
         }
-        
         .about-text h3 {
             font-size: 1.8rem;
             margin-bottom: 20px;
-            color: var(--primary-color);
+            color: var(--gold);
         }
-        
         .about-text p {
             margin-bottom: 20px;
-            line-height: 1.6;
+            line-height: 1.8;
         }
         
-        /* Music Section */
-        .music {
-            background-color: var(--primary-color);
-            color: var(--light-text);
+        /* MUSIC SECTION */
+        #music {
+            background: var(--black);
         }
-        
-        .music .section-title {
-            color: var(--light-text);
-        }
-        
         .music-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
         }
-        
         .music-item {
-            background-color: rgba(255,255,255,0.1);
+            background: var(--gray);
             border-radius: 10px;
             overflow: hidden;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
-        
         .music-item:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
-        
         .music-cover {
             width: 100%;
             height: 300px;
             object-fit: cover;
         }
-        
         .music-info {
             padding: 20px;
         }
-        
         .music-info h3 {
+            font-size: 1.3rem;
             margin-bottom: 10px;
-            font-size: 1.2rem;
         }
-        
         .music-info p {
             opacity: 0.8;
             margin-bottom: 15px;
+            font-size: 0.9rem;
         }
         
-        /* Shows Section */
+        /* SHOWS SECTION */
+        #shows {
+            background: var(--white);
+            color: var(--black);
+        }
         .shows-list {
             max-width: 800px;
             margin: 0 auto;
         }
-        
         .show-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
-            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
-        
         .show-date {
             font-weight: 700;
-            color: var(--primary-color);
+            color: var(--gold);
+            min-width: 100px;
         }
-        
         .show-location {
-            text-align: center;
+            flex: 1;
+            padding: 0 20px;
         }
-        
+        .show-location h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
         .show-btn {
-            background-color: var(--primary-color);
-            color: var(--light-text);
+            background: var(--black);
+            color: var(--white);
         }
         
-        /* Contact Section */
-        .contact {
-            background-color: var(--primary-color);
-            color: var(--light-text);
+        /* CONTACT SECTION */
+        #contact {
+            background: var(--black);
         }
-        
-        .contact .section-title {
-            color: var(--light-text);
-        }
-        
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
         }
-        
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
-        
         .form-group label {
             display: block;
             margin-bottom: 8px;
+            font-weight: 500;
         }
-        
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 12px;
+            padding: 15px;
             border: none;
             border-radius: 5px;
-            background-color: rgba(255,255,255,0.1);
-            color: var(--light-text);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
         }
-        
         .form-group textarea {
             height: 150px;
             resize: vertical;
         }
-        
         .submit-btn {
-            background-color: var(--accent-color);
-            color: var(--light-text);
-            border: none;
+            width: 100%;
             cursor: pointer;
-            font-weight: 600;
+            font-size: 1rem;
         }
         
-        /* Footer */
+        /* FOOTER */
         footer {
-            background-color: #111;
-            color: var(--light-text);
-            padding: 50px 40px 20px;
+            background: #050505;
+            padding: 50px 5% 20px;
             text-align: center;
         }
-        
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
             margin-bottom: 30px;
         }
-        
         .social-links a {
-            color: var(--light-text);
+            color: var(--white);
             font-size: 1.5rem;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
-        
         .social-links a:hover {
-            color: var(--accent-color);
+            color: var(--gold);
+            transform: translateY(-5px);
         }
-        
         .copyright {
             opacity: 0.7;
             font-size: 0.9rem;
         }
         
-        /* Responsive */
+        /* RESPONSIVO */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
+            .hero-content h1 {
+                font-size: 3rem;
             }
-            
             .about-content {
                 flex-direction: column;
             }
-            
             .nav-links {
                 display: none;
+            }
+            .show-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            .show-date {
+                margin-bottom: 10px;
             }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- HEADER -->
     <header id="header">
         <a href="#" class="logo">Barbará <span>Kush</span></a>
         <nav class="nav-links">
-            <a href="#home">Home</a>
+            <a href="#home">Início</a>
             <a href="#about">Sobre</a>
             <a href="#music">Música</a>
             <a href="#shows">Shows</a>
@@ -350,122 +337,130 @@
         </nav>
     </header>
 
-    <section class="hero" id="home">
-        <h1>Barbará Kush</h1>
-        <p>Uma voz que transcende, emoções que permanecem. Descubra a música que vai tocar sua alma.</p>
-        <a href="#music" class="btn">Ouvir Agora</a>
-    </section>
-
-    <section class="section" id="about">
-        <h2 class="section-title">Sobre <span>Mim</span></h2>
-        <div class="about-content">
-            <div class="about-img">
-                <img src="https://images.unsplash.com/photo-1517230878791-4d28214057c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Barbará Kush">
-            </div>
-            <div class="about-text">
-                <h3>A voz que você vai lembrar</h3>
-                <p>Barbará Kush é uma cantora e compositora brasileira conhecida por sua voz poderosa e performances cativantes. Com influências que vão do MPB ao soul e jazz, Barbará cria uma sonoridade única que ressoa com públicos de todas as idades.</p>
-                <p>Nascida em Salvador, Bahia, ela começou sua jornada musical na igreja local, onde desenvolveu sua técnica vocal. Após se formar em música, Barbará se mudou para São Paulo para perseguir seu sonho de carreira musical profissional.</p>
-                <p>Seu álbum de estreia, "Alma Livre", lançado em 2018, recebeu elogios da crítica e estabeleceu Barbará como uma das vozes mais promissoras da nova geração da música brasileira.</p>
-                <a href="#music" class="btn">Conheça Minha Música</a>
+    <!-- HERO SECTION -->
+    <section id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Barbará Kush</h1>
+                <p>Uma voz que transcende, emoções que permanecem. Descubra a música que vai tocar sua alma.</p>
+                <a href="#music" class="btn">Ouvir Agora</a>
             </div>
         </div>
     </section>
 
-    <section class="section music" id="music">
-        <h2 class="section-title">Minha <span>Música</span></h2>
-        <div class="music-grid">
-            <div class="music-item">
-                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Álbum 1" class="music-cover">
-                <div class="music-info">
-                    <h3>Alma Livre</h3>
-                    <p>Álbum • 2018</p>
-                    <a href="#" class="btn">Ouvir</a>
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Sobre <span>Mim</span></h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1517230878791-4d28214057c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Barbará Kush">
                 </div>
-            </div>
-            <div class="music-item">
-                <img src="https://images.unsplash.com/photo-1496293455970-f8581aae0e3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Álbum 2" class="music-cover">
-                <div class="music-info">
-                    <h3>Raízes</h3>
-                    <p>Álbum • 2020</p>
-                    <a href="#" class="btn">Ouvir</a>
-                </div>
-            </div>
-            <div class="music-item">
-                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Single" class="music-cover">
-                <div class="music-info">
-                    <h3>Vem Dançar</h3>
-                    <p>Single • 2022</p>
-                    <a href="#" class="btn">Ouvir</a>
+                <div class="about-text">
+                    <h3>A voz que você vai lembrar</h3>
+                    <p>Barbará Kush é uma cantora e compositora brasileira conhecida por sua voz poderosa e performances cativantes. Com influências que vão do MPB ao soul e jazz, Barbará cria uma sonoridade única que ressoa com públicos de todas as idades.</p>
+                    <p>Nascida em Salvador, Bahia, ela começou sua jornada musical na igreja local, onde desenvolveu sua técnica vocal. Após se formar em música, Barbará se mudou para São Paulo para perseguir seu sonho de carreira musical profissional.</p>
+                    <a href="#music" class="btn">Conheça Minha Música</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section" id="shows">
-        <h2 class="section-title">Próximos <span>Shows</span></h2>
-        <div class="shows-list">
-            <div class="show-item">
-                <div class="show-date">15 JUN <br> 2023</div>
-                <div class="show-location">
-                    <h3>São Paulo, SP</h3>
-                    <p>Audio Club</p>
+    <!-- MUSIC SECTION -->
+    <section id="music">
+        <div class="container">
+            <h2 class="section-title">Minha <span>Música</span></h2>
+            <div class="music-grid">
+                <div class="music-item">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Álbum 1" class="music-cover">
+                    <div class="music-info">
+                        <h3>Alma Livre</h3>
+                        <p>Álbum • 2018</p>
+                        <a href="#" class="btn">Ouvir</a>
+                    </div>
                 </div>
-                <a href="#" class="btn show-btn">Ingressos</a>
-            </div>
-            <div class="show-item">
-                <div class="show-date">22 JUN <br> 2023</div>
-                <div class="show-location">
-                    <h3>Rio de Janeiro, RJ</h3>
-                    <p>Circo Voador</p>
+                <div class="music-item">
+                    <img src="https://images.unsplash.com/photo-1496293455970-f8581aae0e3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Álbum 2" class="music-cover">
+                    <div class="music-info">
+                        <h3>Raízes</h3>
+                        <p>Álbum • 2020</p>
+                        <a href="#" class="btn">Ouvir</a>
+                    </div>
                 </div>
-                <a href="#" class="btn show-btn">Ingressos</a>
-            </div>
-            <div class="show-item">
-                <div class="show-date">30 JUN <br> 2023</div>
-                <div class="show-location">
-                    <h3>Belo Horizonte, MG</h3>
-                    <p>Music Hall</p>
+                <div class="music-item">
+                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Single" class="music-cover">
+                    <div class="music-info">
+                        <h3>Vem Dançar</h3>
+                        <p>Single • 2022</p>
+                        <a href="#" class="btn">Ouvir</a>
+                    </div>
                 </div>
-                <a href="#" class="btn show-btn">Ingressos</a>
-            </div>
-            <div class="show-item">
-                <div class="show-date">07 JUL <br> 2023</div>
-                <div class="show-location">
-                    <h3>Salvador, BA</h3>
-                    <p>Concha Acústica</p>
-                </div>
-                <a href="#" class="btn show-btn">Ingressos</a>
             </div>
         </div>
     </section>
 
-    <section class="section contact" id="contact">
-        <h2 class="section-title">Entre em <span>Contato</span></h2>
-        <form class="contact-form">
-            <div class="form-group">
-                <label for="name">Nome</label>
-                <input type="text" id="name" required>
+    <!-- SHOWS SECTION -->
+    <section id="shows">
+        <div class="container">
+            <h2 class="section-title">Próximos <span>Shows</span></h2>
+            <div class="shows-list">
+                <div class="show-item">
+                    <div class="show-date">15 JUN</div>
+                    <div class="show-location">
+                        <h3>São Paulo, SP</h3>
+                        <p>Audio Club</p>
+                    </div>
+                    <a href="#" class="btn show-btn">Ingressos</a>
+                </div>
+                <div class="show-item">
+                    <div class="show-date">22 JUN</div>
+                    <div class="show-location">
+                        <h3>Rio de Janeiro, RJ</h3>
+                        <p>Circo Voador</p>
+                    </div>
+                    <a href="#" class="btn show-btn">Ingressos</a>
+                </div>
+                <div class="show-item">
+                    <div class="show-date">30 JUN</div>
+                    <div class="show-location">
+                        <h3>Belo Horizonte, MG</h3>
+                        <p>Music Hall</p>
+                    </div>
+                    <a href="#" class="btn show-btn">Ingressos</a>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Mensagem</label>
-                <textarea id="message" required></textarea>
-            </div>
-            <button type="submit" class="btn submit-btn">Enviar Mensagem</button>
-        </form>
+        </div>
     </section>
 
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em <span>Contato</span></h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem</label>
+                    <textarea id="message" required></textarea>
+                </div>
+                <button type="submit" class="btn submit-btn">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
         <div class="social-links">
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-spotify"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
             <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
         <p class="copyright">© 2023 Barbará Kush. Todos os direitos reservados.</p>
     </footer>
@@ -479,17 +474,6 @@
             } else {
                 header.classList.remove('scrolled');
             }
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
         });
     </script>
 </body>
