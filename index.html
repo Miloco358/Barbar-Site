@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BARBARA KUSH | Rock • Blues • Jazz • BPM</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap">
+    <title>BARBARA KUSH | Jazz • Blues • Soul</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* 🔥 Cores & Fontes */
         :root {
-            --dark: #000000;
-            --blood: #8B0000;
-            --gold: #FFD700;
-            --light: #FFFFFF;
-            --neon-red: #FF073A;
-            --neon-gold: #FFEE58;
+            --dark: #0A0A1A;
+            --deep-blue: #1A1A3A;
+            --soul-purple: #6A0DAD;
+            --jazz-pink: #FF69B4;
+            --blues-teal: #20B2AA;
+            --light: #F8F8FF;
+            --neon-purple: #9D00FF;
+            --neon-pink: #FF10F0;
         }
         
         * {
@@ -31,14 +33,13 @@
         }
         
         h1, h2, h3, h4 {
-            font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
         }
         
         /* 🎸 Header (Banner Hero) */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(10, 10, 26, 0.8), rgba(10, 10, 26, 0.9)), url('https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -54,17 +55,18 @@
         .hero h1 {
             font-size: 6rem;
             margin-bottom: 20px;
-            color: var(--gold);
-            text-shadow: 0 0 15px var(--neon-gold);
+            color: var(--jazz-pink);
+            text-shadow: 0 0 15px var(--neon-pink);
             animation: glow 2s infinite alternate;
+            font-weight: 700;
         }
         
         @keyframes glow {
             from {
-                text-shadow: 0 0 10px var(--neon-gold);
+                text-shadow: 0 0 10px var(--neon-pink);
             }
             to {
-                text-shadow: 0 0 20px var(--neon-gold), 0 0 30px var(--blood);
+                text-shadow: 0 0 20px var(--neon-pink), 0 0 30px var(--soul-purple);
             }
         }
         
@@ -72,14 +74,14 @@
             font-size: 1.8rem;
             max-width: 800px;
             margin-bottom: 30px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
         }
         
         .btn {
-            background: var(--blood);
+            background: var(--soul-purple);
             color: white;
             padding: 15px 40px;
-            border: 2px solid var(--gold);
+            border: 2px solid var(--jazz-pink);
             font-size: 1.2rem;
             cursor: pointer;
             transition: all 0.3s;
@@ -89,18 +91,19 @@
             position: relative;
             overflow: hidden;
             z-index: 1;
+            font-family: 'Montserrat', sans-serif;
         }
         
         .btn:hover {
-            background: var(--gold);
+            background: var(--jazz-pink);
             color: var(--dark);
             transform: scale(1.05);
-            box-shadow: 0 0 20px var(--neon-red);
+            box-shadow: 0 0 20px var(--neon-purple);
         }
         
         /* 🎤 Navbar (Fixa no Topo) */
         nav {
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(10, 10, 26, 0.95);
             position: fixed;
             width: 100%;
             padding: 20px;
@@ -108,14 +111,16 @@
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            border-bottom: 1px solid var(--gold);
+            border-bottom: 1px solid var(--jazz-pink);
         }
         
         .logo {
-            font-family: 'Bebas Neue', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
-            color: var(--gold);
-            text-shadow: 0 0 10px var(--neon-gold);
+            color: var(--jazz-pink);
+            text-shadow: 0 0 10px var(--neon-pink);
+            font-weight: 700;
+            letter-spacing: 1px;
         }
         
         .nav-links {
@@ -133,10 +138,11 @@
             transition: all 0.3s;
             position: relative;
             font-size: 1.1rem;
+            font-family: 'Montserrat', sans-serif;
         }
         
         .nav-links a:hover {
-            color: var(--gold);
+            color: var(--jazz-pink);
         }
         
         .nav-links a::after {
@@ -144,7 +150,7 @@
             position: absolute;
             width: 0;
             height: 2px;
-            background: var(--gold);
+            background: var(--jazz-pink);
             bottom: -5px;
             left: 0;
             transition: width 0.3s;
@@ -158,7 +164,7 @@
             display: none;
             font-size: 1.8rem;
             cursor: pointer;
-            color: var(--gold);
+            color: var(--jazz-pink);
         }
         
         /* 🎶 Seções */
@@ -171,10 +177,10 @@
         section h2 {
             font-size: 4rem;
             margin-bottom: 50px;
-            color: var(--gold);
+            color: var(--jazz-pink);
             text-align: center;
             position: relative;
-            text-shadow: 0 0 10px var(--neon-gold);
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
         }
         
         section h2::after {
@@ -182,28 +188,28 @@
             position: absolute;
             width: 150px;
             height: 3px;
-            background: var(--blood);
+            background: var(--blues-teal);
             bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            box-shadow: 0 0 10px var(--neon-red);
+            box-shadow: 0 0 10px var(--neon-purple);
         }
         
         /* 🎵 Player de Música */
         .music-player {
-            background: rgba(20, 20, 20, 0.9);
+            background: rgba(26, 26, 58, 0.9);
             padding: 40px;
             border-radius: 10px;
             margin-top: 30px;
-            border: 1px solid var(--gold);
-            box-shadow: 0 0 20px rgba(139, 0, 0, 0.5);
+            border: 1px solid var(--jazz-pink);
+            box-shadow: 0 0 20px rgba(106, 13, 173, 0.5);
         }
         
         .track {
             margin-bottom: 20px;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            border-left: 4px solid var(--blood);
+            background: rgba(10, 10, 26, 0.7);
+            border-left: 4px solid var(--blues-teal);
             transition: all 0.3s;
             display: flex;
             justify-content: space-between;
@@ -211,14 +217,14 @@
         }
         
         .track:hover {
-            background: rgba(139, 0, 0, 0.3);
+            background: rgba(106, 13, 173, 0.3);
             transform: translateX(10px);
-            box-shadow: 0 0 15px var(--neon-red);
+            box-shadow: 0 0 15px var(--neon-purple);
         }
         
         .track-info h3 {
             font-size: 1.5rem;
-            color: var(--gold);
+            color: var(--jazz-pink);
             margin-bottom: 5px;
         }
         
@@ -228,17 +234,18 @@
         }
         
         .play-btn {
-            background: var(--blood);
+            background: var(--soul-purple);
             color: white;
             border: none;
             padding: 10px 20px;
             cursor: pointer;
             transition: all 0.3s;
             font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
         }
         
         .play-btn:hover {
-            background: var(--gold);
+            background: var(--jazz-pink);
             color: var(--dark);
             transform: scale(1.1);
         }
@@ -252,22 +259,22 @@
         }
         
         .show-card {
-            background: rgba(20, 20, 20, 0.9);
+            background: rgba(26, 26, 58, 0.9);
             padding: 25px;
             border-radius: 5px;
             transition: all 0.5s;
-            border-bottom: 4px solid var(--blood);
+            border-bottom: 4px solid var(--blues-teal);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
         }
         
         .show-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(139, 0, 0, 0.7);
+            box-shadow: 0 15px 30px rgba(106, 13, 173, 0.7);
         }
         
         .show-card h3 {
             font-size: 1.8rem;
-            color: var(--gold);
+            color: var(--jazz-pink);
             margin-bottom: 10px;
         }
         
@@ -308,7 +315,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            background: linear-gradient(transparent, rgba(10, 10, 26, 0.8));
             padding: 20px;
             opacity: 0;
             transition: opacity 0.3s;
@@ -322,11 +329,11 @@
         .contact-form {
             max-width: 700px;
             margin: 0 auto;
-            background: rgba(20, 20, 20, 0.9);
+            background: rgba(26, 26, 58, 0.9);
             padding: 40px;
             border-radius: 10px;
-            border: 1px solid var(--gold);
-            box-shadow: 0 0 20px rgba(139, 0, 0, 0.5);
+            border: 1px solid var(--jazz-pink);
+            box-shadow: 0 0 20px rgba(106, 13, 173, 0.5);
         }
         
         .form-group {
@@ -336,7 +343,7 @@
         .form-group label {
             display: block;
             margin-bottom: 10px;
-            color: var(--gold);
+            color: var(--jazz-pink);
             font-weight: bold;
         }
         
@@ -344,8 +351,8 @@
         .form-group textarea {
             width: 100%;
             padding: 15px;
-            background: rgba(0, 0, 0, 0.7);
-            border: 1px solid var(--gold);
+            background: rgba(10, 10, 26, 0.7);
+            border: 1px solid var(--jazz-pink);
             color: white;
             font-size: 1rem;
             transition: all 0.3s;
@@ -354,17 +361,17 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--blood);
-            box-shadow: 0 0 10px var(--neon-red);
+            border-color: var(--blues-teal);
+            box-shadow: 0 0 10px var(--neon-purple);
         }
         
         /* 🎸 Footer */
         footer {
-            background: #111;
+            background: var(--deep-blue);
             text-align: center;
             padding: 70px 20px;
             margin-top: 100px;
-            border-top: 1px solid var(--gold);
+            border-top: 1px solid var(--jazz-pink);
             position: relative;
         }
         
@@ -375,15 +382,16 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, var(--blood), var(--gold), var(--blood));
+            background: linear-gradient(90deg, var(--soul-purple), var(--jazz-pink), var(--soul-purple));
         }
         
         .logo-footer {
-            font-family: 'Bebas Neue', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-size: 3rem;
-            color: var(--gold);
+            color: var(--jazz-pink);
             margin-bottom: 20px;
-            text-shadow: 0 0 15px var(--neon-gold);
+            text-shadow: 0 0 15px var(--neon-pink);
+            font-weight: 700;
         }
         
         .social-links {
@@ -399,9 +407,9 @@
         }
         
         .social-links a:hover {
-            color: var(--gold);
+            color: var(--jazz-pink);
             transform: translateY(-5px) scale(1.2);
-            text-shadow: 0 0 15px var(--neon-gold);
+            text-shadow: 0 0 15px var(--neon-pink);
         }
         
         .copyright {
@@ -413,7 +421,7 @@
         /* 🎵 Efeito de Digitação no Hero */
         .typewriter {
             overflow: hidden;
-            border-right: 3px solid var(--gold);
+            border-right: 3px solid var(--jazz-pink);
             white-space: nowrap;
             margin: 0 auto;
             letter-spacing: 2px;
@@ -427,7 +435,7 @@
         
         @keyframes blink-caret {
             from, to { border-color: transparent }
-            50% { border-color: var(--gold) }
+            50% { border-color: var(--jazz-pink) }
         }
         
         /* 📱 Responsivo */
@@ -446,7 +454,7 @@
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 80px);
-                background: rgba(0, 0, 0, 0.95);
+                background: rgba(10, 10, 26, 0.98);
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
@@ -498,7 +506,8 @@
 
     <!-- 🎸 Hero Section -->
     <section class="hero" id="home">
-        <p class="typewriter">Rock • Blues • Jazz • BPM</p>
+        <h1>BARBARA KUSH</h1>
+        <p class="typewriter">Jazz • Blues • Soul</p>
         <a href="#music" class="btn">OUVIR AGORA</a>
     </section>
 
@@ -508,22 +517,22 @@
         <div class="music-player">
             <div class="track">
                 <div class="track-info">
-                    <h3>Canção do Rock (2024)</h3>
+                    <h3>Midnight Blues (2024)</h3>
                     <p>Single • 3:45</p>
                 </div>
                 <button class="play-btn"><i class="fas fa-play"></i> PLAY</button>
             </div>
             <div class="track">
                 <div class="track-info">
-                    <h3>Blues da Meia-Noite (2023)</h3>
-                    <p>Álbum "Dark Soul" • 4:20</p>
+                    <h3>Soul Serenade (2023)</h3>
+                    <p>Álbum "Deep Blue Soul" • 4:20</p>
                 </div>
                 <button class="play-btn"><i class="fas fa-play"></i> PLAY</button>
             </div>
             <div class="track">
                 <div class="track-info">
-                    <h3>Jazz na Madrugada (2023)</h3>
-                    <p>Álbum "Dark Soul" • 5:12</p>
+                    <h3>Jazz Noir (2023)</h3>
+                    <p>Álbum "Deep Blue Soul" • 5:12</p>
                 </div>
                 <button class="play-btn"><i class="fas fa-play"></i> PLAY</button>
             </div>
@@ -537,19 +546,19 @@
             <div class="show-card">
                 <h3>São Paulo, SP</h3>
                 <p><i class="fas fa-calendar-alt"></i> 25/10/2024 • 21:00</p>
-                <p><i class="fas fa-map-marker-alt"></i> House of Rock</p>
+                <p><i class="fas fa-map-marker-alt"></i> Blue Note Club</p>
                 <button class="btn">COMPRAR INGRESSOS</button>
             </div>
             <div class="show-card">
                 <h3>Rio de Janeiro, RJ</h3>
                 <p><i class="fas fa-calendar-alt"></i> 15/11/2024 • 20:30</p>
-                <p><i class="fas fa-map-marker-alt"></i> Blues Hall</p>
+                <p><i class="fas fa-map-marker-alt"></i> Jazz & Blues House</p>
                 <button class="btn">COMPRAR INGRESSOS</button>
             </div>
             <div class="show-card">
                 <h3>Belo Horizonte, MG</h3>
                 <p><i class="fas fa-calendar-alt"></i> 05/12/2024 • 22:00</p>
-                <p><i class="fas fa-map-marker-alt"></i> Jazz Club</p>
+                <p><i class="fas fa-map-marker-alt"></i> Soul Station</p>
                 <button class="btn">COMPRAR INGRESSOS</button>
             </div>
         </div>
@@ -567,24 +576,24 @@
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Show ao vivo">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Barbara Kush close">
                 <div class="gallery-overlay">
-                    <h3>Festival de Blues</h3>
+                    <h3>Backstage</h3>
+                    <p>Festival de Jazz, 2023</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Show de jazz">
+                <div class="gallery-overlay">
+                    <h3>Jazz Festival</h3>
                     <p>Rio de Janeiro, 2024</p>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1501612780327-45045538702b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Ensaio musical">
+                <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Ensaio musical">
                 <div class="gallery-overlay">
                     <h3>Ensaio Exclusivo</h3>
                     <p>Estúdio, 2024</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Barbara Kush close">
-                <div class="gallery-overlay">
-                    <h3>Backstage</h3>
-                    <p>Festival, 2023</p>
                 </div>
             </div>
         </div>
@@ -619,8 +628,8 @@
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-spotify"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-apple"></i></a>
+            <a href="#"><i class="fab fa-soundcloud"></i></a>
         </div>
         <p class="copyright">&copy; 2024 Barbara Kush. Todos os direitos reservados.</p>
     </footer>
