@@ -624,26 +624,50 @@
             </div>
         </div>
     </section>
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Entre em <span>Contato</span></h2>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Nome Completo</label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Mensagem</label>
-                    <textarea id="message" required></textarea>
-                </div>
-                <button type="submit" class="btn submit-btn">Enviar Mensagem</button>
-            </form>
-        </div>
-    </section>
+    <!-- Substitua a seção de contato por este código -->
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title">Entre em <span>Contato</span></h2>
+        <form class="contact-form" action="https://formsubmit.co/kauannikolaslemes@gmail.com" method="POST">
+            <!-- Campos ocultos para configurar o FormSubmit -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://seusite.com/obrigado.html"> <!-- Substitua pela sua URL de sucesso -->
+            <input type="hidden" name="_subject" value="Novo contato do site Barbara Kush">
+            
+            <div class="form-group">
+                <label for="name">Nome Completo</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn submit-btn">Enviar Mensagem</button>
+        </form>
+    </div>
+</section>
+
+<!-- Adicione este script no final do body, antes do </body> -->
+<script>
+    // Configuração adicional do formulário
+    const form = document.querySelector('.contact-form');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            const submitBtn = form.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Enviando...';
+            
+            // Você pode adicionar aqui uma lógica para mostrar mensagem de sucesso
+            setTimeout(() => {
+                submitBtn.innerHTML = 'Mensagem Enviada!';
+            }, 1500);
+        });
+    }
+</script>
 
     <footer>
         <div class="container">
